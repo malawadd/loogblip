@@ -30,25 +30,26 @@ export const createPodcast = mutation({
       .filter((q) => q.eq(q.field("email"), identity.email))
       .collect();
 
-    if (user.length === 0) {
-      throw new ConvexError("User not found");
-    }
+    // if (user.length === 0) {
+    //   throw new ConvexError("User not found");
+    // }
 
     return await ctx.db.insert("podcasts", {
       audioStorageId: args.audioStorageId,
-      user: user[0]._id,
+      // user: user[0]._id ,
+      user: undefined,
       podcastTitle: args.podcastTitle,
       podcastDescription: args.podcastDescription,
       audioUrl: args.audioUrl,
       imageUrl: args.imageUrl,
       imageStorageId: args.imageStorageId,
-      author: user[0].name,
-      authorId: user[0].clerkId,
+      author:  undefined,
+      authorId:  undefined,
       voicePrompt: args.voicePrompt,
       imagePrompt: args.imagePrompt,
       voiceType: args.voiceType,
       views: args.views,
-      authorImageUrl: user[0].imageUrl,
+      authorImageUrl: undefined,
       audioDuration: args.audioDuration,
     });
   },

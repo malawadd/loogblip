@@ -3,16 +3,16 @@ import { v } from "convex/values";
 
 export default defineSchema({
   podcasts: defineTable({
-    user: v.id('users'),
+    user: v.optional(v.id("users")),
     podcastTitle: v.string(),
     podcastDescription: v.string(),
     audioUrl: v.optional(v.string()),
     audioStorageId: v.optional(v.id('_storage')),
     imageUrl: v.optional(v.string()),
     imageStorageId: v.optional(v.id('_storage')),
-    author: v.string(),
-    authorId: v.string(),
-    authorImageUrl: v.string(),
+    author: v.optional(v.string()),
+    authorId: v.optional(v.string()),
+    authorImageUrl: v.optional(v.string()),
     voicePrompt: v.string(),
     imagePrompt: v.string(),
     voiceType: v.string(),
