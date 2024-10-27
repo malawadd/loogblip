@@ -9,10 +9,14 @@
 - **AI Voiceover**: Generate voiceovers for podcasts with AI, making it easier for users to create audio content.
 - **User-Friendly Interface**: Intuitive interface for creating and exploring podcasts, designed for seamless user experience.
 
-## Tech Stack
-
 - **Frontend**: [Next.js](https://nextjs.org/) - A React-based framework for building fast, scalable web applications.
 - **Backend**: [Convex](https://docs.convex.dev/) - A backend platform that handles database queries, actions, and real-time features.
+- **Image Generation**: [Livepeer AI](https://docs.livepeer.org/ai/pipelines/text-to-image) - AI-based image generation for creating podcast thumbnails.
+
+- **Text Generation**: [Galadril](https://galadriel.com/) - AI-based text generation used to create podcast scripts.
+- **Audio Generation**: [OpenAI](https://openai.com/) - AI-powered text-to-speech for generating voiceovers for podcasts.
+
+
 
 ## Installation
 
@@ -73,4 +77,5 @@ To get started with **LoogBlip**, follow these steps:
 
 1. **Create Podcasts**: Use the "Create Podcast" option to provide a prompt for AI-generated text, select voice types, and generate voiceovers.
 2. **Explore Podcasts**: Browse existing podcasts by categories, trending, or specific topics.
+
 
