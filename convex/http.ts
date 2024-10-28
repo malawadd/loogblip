@@ -10,12 +10,14 @@ import { internal } from "./_generated/api";
 import { httpAction } from "./_generated/server";
 
 const handleClerkWebhook = httpAction(async (ctx, request) => {
+  console.log("https")
   const event = await validateRequest(request);
   if (!event) {
     return new Response("Invalid request", { status: 400 });
   }
   switch (event.type) {
     case "user.created":
+      console.log("user created in https")
       await ctx.runMutation(internal.users.createUser, {
         clerkId: event.data.id,
         email: event.data.email_addresses[0].email_address,
@@ -24,6 +26,7 @@ const handleClerkWebhook = httpAction(async (ctx, request) => {
       });
       break;
     case "user.updated":
+      console.log("user updated in https")
       await ctx.runMutation(internal.users.updateUser, {
         clerkId: event.data.id,
         imageUrl: event.data.image_url,

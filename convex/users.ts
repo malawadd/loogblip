@@ -66,12 +66,14 @@ export const createUser = internalMutation({
 });
 
 export const updateUser = internalMutation({
+  
   args: {
     clerkId: v.string(),
     imageUrl: v.string(),
     email: v.string(),
   },
   async handler(ctx, args) {
+    console.log("creating users")
     const user = await ctx.db
       .query("users")
       .filter((q) => q.eq(q.field("clerkId"), args.clerkId))
